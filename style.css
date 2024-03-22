@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header
+{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.logo 
+{
+    width: 100px;
+}
+.nav-items ul{
+    display: flex;
+    list-style-type: none;
+
+}
+.nav-items ul li 
+{
+    padding: 10px;
+    margin: 10px;
+}
+
+.res-card
+{
+    width: 200px;
+    height: 500px;
+   padding: 5px;
+   margin: 5px;
+}
+
+.res-card:hover
+{
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.search{
+    padding: 10px;
+}
+
+.res-logo
+{
+    width: 100%;
+}
+
+.res-container{
+display: flex;
+flex-wrap: wrap;
+} */
+
+
+
+
+
+/* 
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black
+}
+
+.logo {
+    width: 200px;
+}
+
+.nav-items {
+    padding:  0px 20px;
+}
+
+.nav-items > ul {
+    font-size: 24px;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 10px
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card {
+    margin: 25px;
+    padding: 5px;
+    width: 250px;
+}
+
+
+a:link
+{
+    text-decoration: none;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.search {
+    padding: 10px
+}
+
+.res-logo {
+    width: 100%;
+}
+
+.filter-btn
+{
+    cursor: pointer;
+    margin: 5px;
+}
+
+.shimmer-container
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-cards
+{
+    margin: 25px;
+    padding: 5px;
+    width: 250px;
+    height: 432px;
+    background-color: #f0f0f0;
+}
+
+.login:hover
+{
+    
+    cursor: pointer;
+}
+.login{
+    padding: 0px 1px;
+}
+
+.filter
+{
+    display: flex;
+}
+.search-box
+{
+    margin-right: 1px;
+}
+.user-card
+{
+    border: 1px solid black;
+    padding: 10px
+} */

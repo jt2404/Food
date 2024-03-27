@@ -66,7 +66,7 @@
 // root.render(<AppLayout></AppLayout>)
 
 
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
@@ -75,6 +75,7 @@ import About from "./component/About";
 import Contact from "./component/Contact";
 import Error from "./component/Error";
 import RestaurantMenu from "./component/RestaurantMenu";
+import UserCont from "../src/utils/UserContext"
 // import Grocery from "./component/Grocery";
 
 //chunking
@@ -82,13 +83,21 @@ import RestaurantMenu from "./component/RestaurantMenu";
 // Dynamic Bundling 
 // lazy loading
 
-
+const [userName,setUserName] = useState();
+useEffect(()=>{
+  const data={
+    name:"Jay Thakkar"
+  }
+  setUserName(data.name)
+},[])
 const Grocery = lazy(()=> import('./component/Grocery'))
 
 const AppLayout = () => {
   return (
     <div className="app">
+      <UserCont.Provider value={{loggedUser:userName}}>
       <Header />
+    </UserCont.Provider>
       <Outlet />
     </div>
   );

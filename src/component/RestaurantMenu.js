@@ -12,12 +12,11 @@ const RestaurantMenu = () => {
 
   // const [resInfo, setResInfo] = useState(null)
   const { resId } = useParams();
-
-
   // const [listofMenu, setListofMenu] = useRestaurantMenu(resId)
   // console.log(listofMenu)
   const listofMenu = useResMenu(resId)
-
+  const [activeIndex, setActiveIndex] = useState(0);
+  
   // console.log(listofMenu?.cards[0].card.card.info.name)
 
   // console.log("in if")
@@ -43,17 +42,17 @@ const RestaurantMenu = () => {
   // }0
   if (listofMenu === null) return <Shimmer />
   // const {name} =listofMenu?.cards[0]?.card?.card?.info
-  // console.log(name)
-
-  const { name, cuisines, costForTwoMessage } = listofMenu?.cards[0]?.card?.card?.info;
   console.log(listofMenu)
-  const item = listofMenu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards
+
+  const { name, cuisines, costForTwoMessage } = listofMenu?.cards[2]?.card?.card?.info;
+  console.log(listofMenu)
+  const item = listofMenu.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards
   console.log(item)
-  const categories = listofMenu.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter(
+  const categories = listofMenu.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
     (c) => c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   )
-  console.log(categories)
-
+  // console.log(categories)
+  
   return (
 
     // <>Hii</>
@@ -75,8 +74,8 @@ const RestaurantMenu = () => {
         </li>)} */}
 
         { /* categories accordions */
-            categories.map((category)=>(
-              <RestaurantCategory data={category?.card?.card} />
+            categories.map((category,index)=>(
+              <RestaurantCategory data={category?.card?.card} isActive={activeIndex === index  ? true : false} onShow={() => {setActiveIndex(index)} } />
             ))
         }
     </div>
